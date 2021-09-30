@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.ch1.helloworld;
 
 public class YummyFood {
 

@@ -1,4 +1,4 @@
-package com.mathex;
+package com.ch1.mathex;
 
 public class MathEx {
     public static void main(String[] args) {
@@ -18,6 +18,4 @@ public class MathEx {
         int leftHour = leftMin / 60;
         System.out.println(leftHour + " hours and " + leftMin % 60 + " minutes");
     }
-
-    public
 }
