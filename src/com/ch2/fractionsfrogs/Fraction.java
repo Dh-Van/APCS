@@ -78,9 +78,13 @@ public class Fraction {
 
 		Fraction f7 = new Fraction(1, 2).add(new Fraction(3, 4));
         System.out.println(f7.toString());
-
-
-
     }
-
 }
+
+/* Output
+3/4 + 4/5 = 31/20
+3/4 - 4/5 = -1/20
+3/4 * 4/5 = 12/20
+Reciprocal of 3/4 = 4/3
+10/8
+ */
