@@ -1,4 +1,4 @@
-package com.ch2.polllab;
+package src.com.ch2.polllab;
 /**
  * Implements a program with a pie chart
  * that shows interactive polling results for three candidates

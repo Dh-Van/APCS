@@ -1,4 +1,4 @@
-package com.ch2.fractionsfrogs;
+package src.com.ch2.fractionsfrogs;
 
 public class Frog {
     private String name;

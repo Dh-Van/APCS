@@ -1,5 +1,6 @@
-package com.ch2.constructors;
+package src.com.ch2.constructors;
 
+@SuppressWarnings("unused")
 public class Box {
 
     private double height, length, weight;

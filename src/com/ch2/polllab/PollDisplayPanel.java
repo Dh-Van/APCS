@@ -1,4 +1,4 @@
-package com.ch2.polllab;
+package src.com.ch2.polllab;
 /**
  * A PollDisplayPanel holds the vote counts and
  * displays the numbers and the pie chart for
@@ -31,7 +31,7 @@ public class PollDisplayPanel extends JPanel
 //    pdp.vote1();
 //    pdp.vote2();
 //    pdp.vote2();
-//    System.out.println(pdp.toString());
+   System.out.println(pdp.toString());
   }
 
   // Increments count1
