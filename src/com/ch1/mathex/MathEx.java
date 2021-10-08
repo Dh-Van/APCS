@@ -1,4 +1,4 @@
-package com.ch1.mathex;
+package src.com.ch1.mathex;
 
 public class MathEx {
     public static void main(String[] args) {
