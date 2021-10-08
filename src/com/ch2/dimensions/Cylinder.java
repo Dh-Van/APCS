@@ -1,4 +1,4 @@
-package src.com.ch2.dimensions;
+package com.ch2.dimensions;
 
 public class Cylinder {
 

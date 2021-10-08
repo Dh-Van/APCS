@@ -1,4 +1,4 @@
-package src.com.ch2.constructors;
+package com.ch2.constructors;
 
 @SuppressWarnings("unused")
 public class Box {

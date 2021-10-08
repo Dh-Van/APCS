@@ -1,4 +1,5 @@
-package src.com.ch2.polllab;/*
+package com.ch2.polllab;
+/*
  * Implements the control panel for the Poll program
  */
 

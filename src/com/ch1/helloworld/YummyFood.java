@@ -1,4 +1,4 @@
-package src.com.ch1.helloworld;
+package com.ch1.helloworld;
 
 public class YummyFood {
 

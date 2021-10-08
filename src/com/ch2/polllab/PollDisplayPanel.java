@@ -1,4 +1,4 @@
-package src.com.ch2.polllab;
+package com.ch2.polllab;
 /**
  * A PollDisplayPanel holds the vote counts and
  * displays the numbers and the pie chart for
