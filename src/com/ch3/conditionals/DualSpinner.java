@@ -47,3 +47,16 @@ public class DualSpinner {
         }
     }
 }
+
+/* Output
+You Won! 1 points
+You Won! 8 points
+You Lose! -3 points
+You Lose! -4 points
+You Won! 2 points
+You Lose! -5 points
+You Lose! -4 points
+You Won! 1 points
+You Lose! -1 points
+You Won! 1 points
+ */
