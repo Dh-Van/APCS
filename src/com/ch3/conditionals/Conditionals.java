@@ -43,7 +43,14 @@ public class Conditionals {
                 return true;
         }
 
-        return a <= big && goal - a * 5 <= small;
+        if(a <= big && goal - a * 5 <= small) {
+            return true;
+        } else if(goal - big * 5 <= small && goal - big * 5 > 0){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 
@@ -115,12 +122,11 @@ Find Best fit 3 6 4 is 1
 
 Make bench 3 1 8 is true
 Make bench 3 1 9 is false
-Make bench 11 1 15 is false
+Make bench 11 1 15 is true
 Make bench 4 2 15 is false
 Make bench 20 0 20 is true
 Make bench 3 4 20 is true
 Make bench 0 6 30 is true
 Make bench 0 5 30 is false
 Make bench 2 6 23 is false
-
  */
