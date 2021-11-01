@@ -15,15 +15,19 @@ public class CrapsGame
   public int processRoll(int total) {
     int result = 0;
 
-    if ((point == 0 && total == 11) || total == 7) {
-      point = 0;
-      result = -1;
-    } else if (point == 0 && (total == 2 || total == 3 || total == 12)) {
+    if (point == 0 && total == 11) {
       point = 0;
       result = 1;
+    } else if (point == 0 && (total == 2 || total == 3 || total == 12)) {
+      point = 0;
+      result = -1;
     } else if (point == 0){
       point = total;
-    } else if(point == total){
+    } else if (total == 7){
+      point = 0;
+      result = -1; //
+    }
+    else if(point == total){
       point = 0;
       return 1;
     }
