@@ -66,5 +66,5 @@ public class CrapsStats extends JFrame
 }
 
 /* Output:
- Games: 10000 Wins: 3913
+ Games: 10000 Wins: 4931
  */
