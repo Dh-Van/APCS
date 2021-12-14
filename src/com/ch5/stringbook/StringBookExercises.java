@@ -21,10 +21,10 @@ public class StringBookExercises {
         System.out.println("04/20/2014 becomes " + dateString("04/20/2014"));
         
         System.out.println("\ndateString2");
-        System.out.println("04/20/2014 becomes" + dateString2("04/20/2014"));
-        System.out.println("4/20/2014 becomes" + dateString2("4/20/2014"));
-        System.out.println("04/2/2014 becomes" + dateString2("04/2/2014"));
-        System.out.println("4/2/2014 becomes" + dateString2("4/2/2014"));
+        System.out.println("04/20/2014 becomes " + dateString2("04/20/2014"));
+        System.out.println("4/20/2014 becomes " + dateString2("4/20/2014"));
+        System.out.println("04/2/2014 becomes " + dateString2("04/2/2014"));
+        System.out.println("4/2/2014 becomes " + dateString2("4/2/2014"));
         
         System.out.println("\nstartsWith");
         System.out.println(startsWith("architecture", "arch"));
@@ -93,6 +93,51 @@ public class StringBookExercises {
    }
 }
 /* Output:
+scroll
+ello WorldH
+appyh
+h
 
+convertName
+Lori Renee Reubenstein
+Joe Biden
+Bozo the Clown
+
+negative
+1101000110
+00000000
+
+dateString
+04/20/2014 becomes 20-04-2014
+
+dateString2
+04/20/2014 becomes 20-04-2014
+4/20/2014 becomes 20-4-2014
+04/2/2014 becomes 2-04-2014
+4/2/2014 becomes 2-4-2014
+
+startsWith
+true
+true
+false
+false
+true
+
+endsWith
+true
+true
+false
+false
+true
+
+removeTag
+Hello World
+<b>Hello World</b>
+Hello World</b>
+<b>Hello World
+</img>Hello World<img>
+Happy Birthday Hello World
+Hello World Happy Birthday
+Happy Hello World Birthday
 */
 
