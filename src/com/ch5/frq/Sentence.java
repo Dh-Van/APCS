@@ -1,7 +1,5 @@
 package com.ch5.frq;
 
-import java.sql.SQLOutput;
-
 public class Sentence {
 
     private String currSent;
@@ -38,7 +36,8 @@ public class Sentence {
      *
      */
     public void replaceNthTime(String str, int n, String repl) {
-        currSent = currSent.substring(0, findNthTime(str, n)-1) + repl + currSent.substring(findNthTime(str, n)+1, currSent.length()-1);
+        if(findNthTime(str, n) != -1)
+        currSent = currSent.substring(0, findNthTime(str, n)) + repl + currSent.substring(findNthTime(str, n)+str.length(), currSent.length()-1);
     }
 
     /** Returns the index of the last occurrence of str in the current sentence:
@@ -47,8 +46,11 @@ public class Sentence {
      * Postcondition: the current sentence is not modified.
      */
     public int findLastTime(String str) {
-        /* part c - you must call findNthTime here */
-        return -1;  // replace this
+        int counter = 1;
+        if(findNthTime(str, counter) == -1) return -1;
+
+        for(counter = 1; findNthTime(str, counter) != -1; counter++){}
+        return findNthTime(str, counter-1);
     }
 
     public static void main(String[] args) {
@@ -87,3 +89,18 @@ public class Sentence {
     }
 
 }
+/*
+3
+A crane ate late
+-1
+A cat ate late.
+11
+A cat ate lxxe
+-1
+A cat ate late.
+axx
+aaaa
+11
+2
+-1
+ */
