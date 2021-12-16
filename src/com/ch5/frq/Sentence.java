@@ -22,7 +22,15 @@ public class Sentence {
     public int findNthTime(String str, int n) {
         int searchIndex = 0;
         for(int i = 0; i < n; i++){
-            searchIndex = searchIndex != -1 ? searchIndex = currSent.indexOf(str, searchIndex + str.length()-1) : -1;
+//            searchIndex = i == 0 ? currSent.indexOf(str, searchIndex) : searchIndex != -1 ? currSent.indexOf(str, searchIndex + str.length()-1) : -1;
+
+            if(i == 0){
+                searchIndex = currSent.indexOf(str, searchIndex);
+            } else if(searchIndex != -1) {
+                searchIndex = currSent.indexOf(str, searchIndex + str.length() - 1);
+            } else {
+                searchIndex = -1;
+            }
         }
         return searchIndex;
     }
@@ -34,7 +42,7 @@ public class Sentence {
      */
     public void replaceNthTime(String str, int n, String repl) {
         if(findNthTime(str, n) != -1)
-        currSent = currSent.substring(0, findNthTime(str, n)) + repl + currSent.substring(findNthTime(str, n)+str.length(), currSent.length()-1);
+        currSent = currSent.substring(0, findNthTime(str, n)) + repl + currSent.substring(findNthTime(str, n)+str.length());
     }
 
     /** Returns the index of the last occurrence of str in the current sentence:
@@ -88,16 +96,18 @@ public class Sentence {
 }
 /*
 3
-A crane ate late
+A crane ate late.
 -1
 A cat ate late.
 11
-A cat ate lxxe
+A cat ate lxxe.
 -1
 A cat ate late.
-axx
+xxaa
 aaaa
 11
 2
 -1
+
+Process finished with
  */
