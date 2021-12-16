@@ -14,8 +14,6 @@ public class Sentence {
         return currSent;
     }
 
-
-
     /** Returns the index of the nth occurrence of str in the current sencence;
      * returns -1 of the nth occurrence does not exist.
      * Precondition:  str.length() > 0 and n > 0
@@ -27,7 +25,6 @@ public class Sentence {
             searchIndex = searchIndex != -1 ? searchIndex = currSent.indexOf(str, searchIndex + str.length()-1) : -1;
         }
         return searchIndex;
-
     }
 
     /** Modifies the current sentence by replacing the nth occurrence of str with repl

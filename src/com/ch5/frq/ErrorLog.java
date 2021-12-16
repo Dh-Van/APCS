@@ -17,8 +17,9 @@ public class ErrorLog {
 	 * Postcondition: the description is unchanged
 	 */
 	public boolean containsKey(String keyword) {
-		if() return true;
-        if(getDescription().indexOf("disk ") == 0 || getDescription().indexOf(" disk") == getDescription().length()-1) return true;
+        String s = getDescription();
+        if(s.indexOf(keyword + " ") == 0 || s.indexOf(" " + keyword) == s.length() - (keyword.length()+1)) return true;
+        if(s.indexOf(" " + keyword + " ") != -1) return true;
         return false;
 	}
 	
@@ -42,8 +43,23 @@ public class ErrorLog {
 		System.out.println("message 6 " + er6.containsKey("disk"));
 		System.out.println("message 6 " + er6.containsKey("error"));
 		System.out.println("message 7 " + er7.containsKey("disk"));
-		
-
 	}
-
 }
+
+/*
+security alert
+disk offline
+file not found on disk3
+read error on disk DSK7
+write error on disk
+error on /dev/disk
+disk
+message 1 false
+message 2 true
+message 3 false
+message 4 true
+message 5 true
+message 6 false
+message 6 true
+message 7 true
+ */
