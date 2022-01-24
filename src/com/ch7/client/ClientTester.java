@@ -50,7 +50,7 @@ public class ClientTester {
         }
     }
 
-    public static void main(String [] args){
+    public static void main(String [] args) {
         Client c1 = new Client("Anton", 101);
         Client c2 = new Client("Bradley", 102);
         Client c3 = new Client("Bradley", 103);
@@ -60,22 +60,27 @@ public class ClientTester {
         Client c7 = new Client("Edgerton", 107);
         Client c8 = new Client("Fleetwood", 108);
 
-        Client [] list1 = {c1,c3,c4,c5,c7,c8};
-        Client [] list2 = {c2, c3, c5, c6, c7};
-        Client [] list3 = {c3,c5,c6};
+        Client[] list1 = {c1, c3, c4, c5, c7, c8};
+        Client[] list2 = {c2, c3, c5, c6, c7};
+        Client[] list3 = {c3, c5, c6};
 
 
-        Client [] result1 = new Client[5];
-        prefixMerge(list1,list2,result1);
+        Client[] result1 = new Client[5];
+        prefixMerge(list1, list2, result1);
         System.out.println(Arrays.toString(result1));
 
-        Client [] result2 = new Client[3];
-        prefixMerge(list2,list3,result2);
+        Client[] result2 = new Client[3];
+        prefixMerge(list2, list3, result2);
         System.out.println(Arrays.toString(result2));
 
-        Client [] result3 = new Client[3];
-        prefixMerge(list3,list1,result3);
+        Client[] result3 = new Client[3];
+        prefixMerge(list3, list1, result3);
         System.out.println(Arrays.toString(result3));
 
     }
 }
+/*Output
+[Anton 101, Bradley 102, Bradley 103, Cho 104, Dahl 105]
+[Bradley 102, Bradley 103, Dahl 105]
+[Anton 101, Bradley 103, Cho 104]
+ */
