@@ -43,7 +43,9 @@ public class ClientTester {
                 result[i] = list2[l2Index];
                 l2Index++;
             } else {
-
+                result[i] = list1[l1Index];
+                l1Index++;
+                l2Index++;
             }
         }
     }
