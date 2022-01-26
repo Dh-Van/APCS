@@ -49,17 +49,24 @@ public class RollingDie {
     {
         int longestRun = -1;
         int currentRun = 0;
+
+        int currentStart = -1;
+
         int lastNum = -1;
+
         for(int i = 0; i < values.length; i++){
             if(values[i] == lastNum){
                 currentRun++;
             } else {
-                if(currentRun > longestRun) longestRun = currentRun;
+                if(currentRun > longestRun) {
+                    longestRun = currentRun;
+                    currentStart = i - longestRun;
+                }
                 currentRun = 0;
             }
             lastNum = values[i];
         }
-        return longestRun + 1;
+        return currentStart - 1;
     }
 
 
