@@ -111,3 +111,11 @@ public class NitalTester {
 //        System.out.println(containsRepeats(arr5));
     }
 }
+/*Output:
+true
+true
+false
+false
+false
+false
+ */
