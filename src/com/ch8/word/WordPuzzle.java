@@ -22,9 +22,13 @@ public class WordPuzzle {
      * Precondition: r and c are valid indexes in blackBoxes
      */
     public boolean toBeLabeled(int r, int c, boolean [][] blackBoxes){
+        // Checks if a there is a black box at r, c
         if(blackBoxes[r][c]) return false;
+        // If its in the 1st row or column, return true since no white box to the left / top
         if(r == 0 || c == 0) return true;
+        // If there is a black box the row before, or the column above, return true
         if(blackBoxes[r-1][c] || blackBoxes[r][c-1]) return true;
+        // If all cases fail, return false
         return false;
     }
 
