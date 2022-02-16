@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch WordDuoList",
+            "request": "launch",
+            "mainClass": "com.ch9.wordduo.WordDuoList",
+            "projectName": "APCS_ac3b3c08"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/src/com/ch9",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Main",
+            "args": ""
+        }
+    ]
+  }
