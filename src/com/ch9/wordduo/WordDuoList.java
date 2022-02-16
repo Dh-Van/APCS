@@ -96,35 +96,142 @@ public class WordDuoList {
      */
     public void moveMatchesToTop(){
         /* part c */
-        for(int i = 0; i < allDuos.size(); i++){
+        for(int i = 0, counter = 0; i < allDuos.size(); i++){
             WordDuo wD = allDuos.get(i);
             if(wD.first.equals(wD.second)){
                 allDuos.remove(i);
-                allDuos.set(0, wD);
+                allDuos.set(counter, wD);
+                counter++;
             }
         }
     }
 
     public static void main(String[] args){
-        String [] stuff = {"the", "red", "fox", "the", "red"};        
+        String [] stuff = {"to","be","or","not","to","be"};
         WordDuoList wdl = new WordDuoList(stuff);
-        System.out.println(wdl);
-        System.out.println(wdl.numMatches());
+        System.out.println(wdl + "\n");
+        System.out.println(wdl.numMatches() + "\n");
         wdl.moveMatchesToTop();
-        System.out.println(wdl);
+        System.out.println(wdl + "\n\n");
 
-        // String [] stuff2 = {"one","fish","two","fish","red","fish","blue","fish"};
-        // WordDuoList wdl2 = new WordDuoList(stuff2);
-        // System.out.println(wdl2);
-        // System.out.println(wdl2.numMatches());
-        // wdl2.moveMatchesToTop();
-        // System.out.println(wdl2);
+         String [] stuff2 = {"one","fish","two","fish","red","fish","blue","fish"};
+         WordDuoList wdl2 = new WordDuoList(stuff2);
+         System.out.println(wdl2 + "\n");
+         System.out.println(wdl2.numMatches() + "\n");
+         wdl2.moveMatchesToTop();
+         System.out.println(wdl2 + "\n\n");
 
-        // String [] stuff3 = {"call","me","ishmael"};
-        // WordDuoList wdl3 = new WordDuoList(stuff3);
-        // System.out.println(wdl3);
-        // System.out.println(wdl3.numMatches());
-        // wdl3.moveMatchesToTop();
-        // System.out.println(wdl3);
+         String [] stuff3 = {"call","me","ishmael"};
+         WordDuoList wdl3 = new WordDuoList(stuff3);
+         System.out.println(wdl3 + "\n");
+         System.out.println(wdl3.numMatches() + "\n");
+         wdl3.moveMatchesToTop();
+         System.out.println(wdl3 + "\n\n");
     }
 }
+
+/*Output
+(to, be)
+(to, or)
+(to, not)
+(to, to)
+(to, be)
+(be, or)
+(be, not)
+(be, to)
+(be, be)
+(or, not)
+(or, to)
+(or, be)
+(not, to)
+(not, be)
+(to, be)
+
+
+2
+
+(to, to)
+(be, be)
+(to, not)
+(to, be)
+(be, or)
+(be, not)
+(be, to)
+(or, not)
+(or, to)
+(or, be)
+(not, to)
+(not, be)
+(to, be)
+
+
+
+(one, fish)
+(one, two)
+(one, fish)
+(one, red)
+(one, fish)
+(one, blue)
+(one, fish)
+(fish, two)
+(fish, fish)
+(fish, red)
+(fish, fish)
+(fish, blue)
+(fish, fish)
+(two, fish)
+(two, red)
+(two, fish)
+(two, blue)
+(two, fish)
+(fish, red)
+(fish, fish)
+(fish, blue)
+(fish, fish)
+(red, fish)
+(red, blue)
+(red, fish)
+(fish, blue)
+(fish, fish)
+(blue, fish)
+
+
+6
+
+(fish, fish)
+(fish, fish)
+(fish, fish)
+(fish, fish)
+(fish, fish)
+(fish, fish)
+(one, fish)
+(fish, two)
+(fish, red)
+(fish, blue)
+(two, fish)
+(two, red)
+(two, fish)
+(two, blue)
+(two, fish)
+(fish, red)
+(fish, blue)
+(red, fish)
+(red, blue)
+(red, fish)
+(fish, blue)
+(blue, fish)
+
+
+
+(call, me)
+(call, ishmael)
+(me, ishmael)
+
+
+0
+
+(call, me)
+(call, ishmael)
+(me, ishmael)
+
+ */
