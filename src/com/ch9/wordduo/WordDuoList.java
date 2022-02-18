@@ -100,7 +100,7 @@ public class WordDuoList {
             WordDuo wD = allDuos.get(i);
             if(wD.first.equals(wD.second)){
                 allDuos.remove(i);
-                allDuos.set(counter, wD);
+                allDuos.add(counter, wD);
                 counter++;
             }
         }
@@ -152,6 +152,8 @@ public class WordDuoList {
 
 (to, to)
 (be, be)
+(to, be)
+(to, or)
 (to, not)
 (to, be)
 (be, or)
@@ -204,6 +206,12 @@ public class WordDuoList {
 (fish, fish)
 (fish, fish)
 (fish, fish)
+(one, fish)
+(one, two)
+(one, fish)
+(one, red)
+(one, fish)
+(one, blue)
 (one, fish)
 (fish, two)
 (fish, red)
