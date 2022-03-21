@@ -23,3 +23,10 @@ public class BookTester {
         bl2.printDescription();
     }
 }
+
+/* Output:
+Frankenstein, written by Mary Shelley
+The Wonderful Wizard of Oz, written by L. Frank Baum and illustrated by W.W Denslow
+Frankenstein, written by Mary Shelley, $10.99
+The Wonderful Wizard of Oz, written by L. Frank Baum and illustrated by W.W Denslow, $12.99
+ */

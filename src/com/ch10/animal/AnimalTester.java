@@ -13,3 +13,9 @@ public class AnimalTester {
 
     }
 }
+
+/* Output:
+Kyle the Alien is a Carnivore
+Mihir the Krytonian is a Herbivore
+Patrick the Elephant is a Herbivore with tusks 5.0 meters long
+ */
