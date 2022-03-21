@@ -5,7 +5,7 @@ public class SpecialCheckingAccount extends CheckingAccount{
     private double minBal;
     private double intrestRate;
 
-    public SpecialCheckingAccount(int idNumber, double startBal, double cc, double minBal, double intrestRate) {
+    public SpecialCheckingAccount(int idNumber, double startBal, double cc, double intrestRate, double minBal) {
         super(idNumber, startBal, cc);
         this.minBal = minBal;
         this.intrestRate = intrestRate;
