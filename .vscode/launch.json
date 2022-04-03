@@ -5,6 +5,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HanoiTower",
+            "request": "launch",
+            "mainClass": "com.ch11.toh.HanoiTower",
+            "projectName": "APCS_ac3b3c08"
+        },
+        {
+            "type": "java",
+            "name": "Launch Peg",
+            "request": "launch",
+            "mainClass": "com.ch11.toh.Peg",
+            "projectName": "APCS_ac3b3c08"
+        },
+        {
+            "type": "java",
             "name": "Launch WordDuoList",
             "request": "launch",
             "mainClass": "com.ch9.wordduo.WordDuoList",
