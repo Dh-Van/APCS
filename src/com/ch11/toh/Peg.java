@@ -22,10 +22,6 @@ public class Peg {
         return pegNum;
     }
 
-    public String getDiscs(){
-        return Arrays.toString(discs);
-    }
-
     public String toString() {
         String s = "Peg " + pegNum;
         return s;
@@ -51,8 +47,8 @@ public class Peg {
         return size;
     }
 
-    public int getNumDiscs(){
-        return count;
+    public int getDisc(int pos){
+        return discs[pos];
     }
 
     // Moves the top disc from the current peg to another peg

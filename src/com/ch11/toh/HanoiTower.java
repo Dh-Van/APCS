@@ -8,6 +8,7 @@ public class HanoiTower {
 
     public HanoiTower(int num) {
         this.numDiscs = num;
+
         this.peg1 = new Peg(1, numDiscs);
         this.peg2 = new Peg(2, numDiscs);
         this.peg3 = new Peg(3, numDiscs);
@@ -15,21 +16,19 @@ public class HanoiTower {
         for(int i = numDiscs; i > 0; i--){
             peg1.addDisc(i);
         }
-
     }
 
     public void solveTower() {
+        printVertically();
         moveTower(peg1, peg2, peg3, numDiscs);
-        System.out.println(peg1.getDiscs());
-        System.out.println(peg2.getDiscs());
-        System.out.println(peg3.getDiscs());
+        printVertically();
     }
 
     private void moveTower(Peg pegA, Peg pegB, Peg pegC, int numToMove) {
-        if(numToMove == 2){
-            pegA.moveTopDisc(pegB);
+        if(numToMove == 0) return;
+
+        if(numToMove == 1){
             pegA.moveTopDisc(pegC);
-            pegB.moveTopDisc(pegC);
             return;
         }
 
@@ -40,52 +39,237 @@ public class HanoiTower {
         moveTower(pegB, pegA, pegC, numToMove - 1);
     }
 
-    /**
-     * 
-     * @param origin The peg with the discs in the two stack
-     * @param destination The peg where two stack should be created
-     * @param intermediate The extra peg
-     */
-    private void create2Stack(Peg origin, Peg destination, Peg intermediate){
-        // Moves the top disc from a to b
-        origin.moveTopDisc(intermediate);
-        // Moves the top disc from a to c
-        origin.moveTopDisc(destination);
-        // Moves the top disc from b to c
-        intermediate.moveTopDisc(destination);
-    }
-
-    private void create3Stack(Peg origin, Peg destination, Peg intermediate){
-        // Creates a 2 stack from a to b
-        create2Stack(origin, intermediate, destination);
-        // Moves the top disc from a to c
-        origin.moveTopDisc(destination);
-        // Creates a 2 stack from b to c
-        create2Stack(intermediate, destination, origin);
-    }
-
-    private void create4Stack(Peg origin, Peg destination, Peg intermediate){
-        create3Stack(origin, intermediate, destination);
-        origin.moveTopDisc(destination);
-        create3Stack(intermediate, destination, origin);
-    }
-
-    private void create5Stack(Peg origin, Peg destination, Peg intermediate){
-        create4Stack(origin, intermediate, destination);
-        origin.moveTopDisc(destination);
-        create4Stack(intermediate, destination, origin);
-    }
-
-    private void create6Stack(Peg origin, Peg destination, Peg intermediate){
-        create5Stack(origin, intermediate, destination);
-        origin.moveTopDisc(destination);
-        create5Stack(intermediate, destination, origin);
+    public void printVertically(){
+        for(int i = numDiscs - 1; i >= 0; i--){
+            String s = "";
+            s += peg1.getDisc(i) + "\t" + peg2.getDisc(i) + "\t" + peg3.getDisc(i);
+            System.out.println(s);
+        }
     }
     
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        HanoiTower ht = new HanoiTower(6);
-        ht.solveTower();
+        HanoiTower ht0 = new HanoiTower(0);
+        ht0.solveTower();
+        System.out.println("\n\n\n\n");
+
+        HanoiTower ht1 = new HanoiTower(1);
+        ht1.solveTower();
+        System.out.println("\n\n\n\n");
+
+        HanoiTower ht2 = new HanoiTower(2);
+        ht2.solveTower();
+        System.out.println("\n\n\n\n");
+
+        HanoiTower ht3 = new HanoiTower(3);
+        ht3.solveTower();
+        System.out.println("\n\n\n\n");
+
+        HanoiTower ht4 = new HanoiTower(4);
+        ht4.solveTower();
+        System.out.println("\n\n\n\n");
+
+        HanoiTower ht5 = new HanoiTower(5);
+        ht5.solveTower();
+        System.out.println("\n\n\n\n");
+
+        HanoiTower ht6 = new HanoiTower(6);
+        ht6.solveTower();
+        System.out.println("\n\n\n\n");
     }
 
 }
+
+/* Output:
+
+
+
+
+
+1       0       0
+Moving disc 1 from peg 1 to peg 3
+0       0       1
+
+
+
+
+
+1       0       0
+2       0       0
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+0       0       1
+0       0       2
+
+
+
+
+
+1       0       0
+2       0       0
+3       0       0
+Moving disc 1 from peg 1 to peg 3
+Moving disc 2 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 2
+Moving disc 3 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 1
+Moving disc 2 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 3
+0       0       1
+0       0       2
+0       0       3
+
+
+
+
+
+1       0       0
+2       0       0
+3       0       0
+4       0       0
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 3 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 1
+Moving disc 2 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 4 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 2 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 3 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+0       0       1
+0       0       2
+0       0       3
+0       0       4
+
+
+
+
+
+1       0       0
+2       0       0
+3       0       0
+4       0       0
+5       0       0
+Moving disc 1 from peg 1 to peg 3
+Moving disc 2 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 2
+Moving disc 3 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 1
+Moving disc 2 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 3
+Moving disc 4 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 2
+Moving disc 2 from peg 3 to peg 1
+Moving disc 1 from peg 2 to peg 1
+Moving disc 3 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 3
+Moving disc 2 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 2
+Moving disc 5 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 1
+Moving disc 2 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 3
+Moving disc 3 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 2
+Moving disc 2 from peg 3 to peg 1
+Moving disc 1 from peg 2 to peg 1
+Moving disc 4 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 3
+Moving disc 2 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 2
+Moving disc 3 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 1
+Moving disc 2 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 3
+0       0       1
+0       0       2
+0       0       3
+0       0       4
+0       0       5
+
+
+
+
+
+1       0       0
+2       0       0
+3       0       0
+4       0       0
+5       0       0
+6       0       0
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 3 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 1
+Moving disc 2 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 4 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 2 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 3 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 5 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 1
+Moving disc 2 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 3 from peg 3 to peg 1
+Moving disc 1 from peg 2 to peg 3
+Moving disc 2 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 4 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 3 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 1
+Moving disc 2 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 6 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 2 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 3 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 4 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 2 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 3 from peg 3 to peg 1
+Moving disc 1 from peg 2 to peg 3
+Moving disc 2 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 5 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 3 from peg 1 to peg 2
+Moving disc 1 from peg 3 to peg 1
+Moving disc 2 from peg 3 to peg 2
+Moving disc 1 from peg 1 to peg 2
+Moving disc 4 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+Moving disc 2 from peg 2 to peg 1
+Moving disc 1 from peg 3 to peg 1
+Moving disc 3 from peg 2 to peg 3
+Moving disc 1 from peg 1 to peg 2
+Moving disc 2 from peg 1 to peg 3
+Moving disc 1 from peg 2 to peg 3
+0       0       1
+0       0       2
+0       0       3
+0       0       4
+0       0       5
+0       0       6
+*/
