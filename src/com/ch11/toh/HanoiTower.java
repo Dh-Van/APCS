@@ -19,14 +19,25 @@ public class HanoiTower {
     }
 
     public void solveTower() {
-        moveTower(peg1, peg3, peg2, numDiscs);
+        moveTower(peg1, peg2, peg3, numDiscs);
+        System.out.println(peg1.getDiscs());
+        System.out.println(peg2.getDiscs());
+        System.out.println(peg3.getDiscs());
     }
 
-    private void moveTower(Peg pegA, Peg pegB, Peg pegC, int numtoMove) {
-        create6Stack(pegA, pegC, pegB);
-        System.out.println(pegA.getDiscs());
-        System.out.println(pegB.getDiscs());
-        System.out.println(pegC.getDiscs());
+    private void moveTower(Peg pegA, Peg pegB, Peg pegC, int numToMove) {
+        if(numToMove == 2){
+            pegA.moveTopDisc(pegB);
+            pegA.moveTopDisc(pegC);
+            pegB.moveTopDisc(pegC);
+            return;
+        }
+
+        moveTower(pegA, pegC, pegB, numToMove - 1);
+
+        pegA.moveTopDisc(pegC);
+
+        moveTower(pegB, pegA, pegC, numToMove - 1);
     }
 
     /**
