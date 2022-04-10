@@ -5,6 +5,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BoxFractal",
+            "request": "launch",
+            "mainClass": "com.ch11.fractal.BoxFractal",
+            "projectName": "APCS_ac3b3c08"
+        },
+        {
+            "type": "java",
             "name": "Launch HanoiTower",
             "request": "launch",
             "mainClass": "com.ch11.toh.HanoiTower",

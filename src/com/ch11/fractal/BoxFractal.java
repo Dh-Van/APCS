@@ -21,49 +21,26 @@ public class BoxFractal extends JPanel{
         int y = yCenter - 243;
 
         g.setColor(Color.RED);
-        draw(g, xcoord, ycoord, levels);
+        draw(g, x, y, 486, 496, levels);
     }
 
-    public int[] getXPoints(int[] x, int size){
-        x[0] = 0;
-        x[1] = size - (size / 3);
-        x[2] = size - (2 * size / 3);
-        x[3] = 0;
-        x[4] = size - (size / 3);
-
-        return x;
-    }
-
-    public int[] getYPoints(int[] y, int size){
-        y[0] = 0;
-        y[1] = 0;
-        y[2] = size - (2 * size / 3);
-        y[3] = size - (size / 3);
-        y[4] = size - (size / 3);
-
-        return y;
-    }
-
-    private void draw(Graphics g, int[] x, int[] y, int levels){
+    private void draw(Graphics g, int x, int y, int h, int w, int times){
 
         if(levels == 0) return;
-        double size = 486 * Math.pow(3, -levels + 1);
+        if(levels == 1) g.fillRect(x, y, w, h);
 
-        for(int i = 0; i < 5; i++){
-            g.fillRect(x[i], y[i], (int) size, (int) size);
-        }
-
-        draw(g, getXPoints(x, (int) size), getYPoints((int) y, size));
-
-
+        draw(g, x, y, h/3, w/3, --times);
+        draw(g, x + w/3, y + h/3, h/3, w/3, --times);
+        draw(g, x + 2 * w/3, y + h/3, h/3, w/3, --times);
+        draw(g, x + 2 * w/3, y + 2 * h/3, h/3, w/3, --times);
 
     }
 
     public static void main(String[] args) {
         JFrame window = new JFrame("Fractals");
-        window.setBounds(200, 200, 486, 486);
+        window.setBounds(200, 200, 500, 500);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BoxFractal panel = new BoxFractal(2);
+        BoxFractal panel = new BoxFractal(3);
         panel.setBackground(Color.WHITE);
         Container c = window.getContentPane();
         c.add(panel);
