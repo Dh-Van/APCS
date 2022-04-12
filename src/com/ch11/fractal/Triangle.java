@@ -36,7 +36,7 @@ public class Triangle extends JPanel {
         return m;
     }
 
-    public void drawAndSplit(Graphics g, int [] x, int [] y, int times)
+    public void drawAndSplit(Graphics g, int x, int y, int times)
     {
         if(times == 0) return;
         if(times % 2 == 0) g.setColor(Color.WHITE);

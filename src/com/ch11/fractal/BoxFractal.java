@@ -26,13 +26,24 @@ public class BoxFractal extends JPanel{
 
     private void draw(Graphics g, int x, int y, int h, int w, int times){
 
-        if(levels == 0) return;
-        if(levels == 1) g.fillRect(x, y, w, h);
+        if(times == 0) return;
+        if(times == 1) {
+            g.fillRect(x, y, w, h);
+            return;
+        }
 
-        draw(g, x, y, h/3, w/3, --times);
-        draw(g, x + w/3, y + h/3, h/3, w/3, --times);
-        draw(g, x + 2 * w/3, y + h/3, h/3, w/3, --times);
-        draw(g, x + 2 * w/3, y + 2 * h/3, h/3, w/3, --times);
+        if(times > 0) {
+            // Top Left
+            draw(g, x, y, h / 3, w / 3, times - 1);
+            // Bottom Left
+            draw(g, x, y + 2 * h / 3, h / 3, w / 3, times - 1);
+            // Middle
+            draw(g, x + w / 3, y + h / 3, h / 3, w / 3, times - 1);
+            // Top Right
+            draw(g, x + 2 * w / 3, y, h / 3, w / 3, times - 1);
+            // Bottom Right
+            draw(g, x + 2 * w / 3, y + 2 * h / 3, h / 3, w / 3, times - 1);
+        }
 
     }
 
@@ -40,7 +51,7 @@ public class BoxFractal extends JPanel{
         JFrame window = new JFrame("Fractals");
         window.setBounds(200, 200, 500, 500);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BoxFractal panel = new BoxFractal(3);
+        BoxFractal panel = new BoxFractal(4);
         panel.setBackground(Color.WHITE);
         Container c = window.getContentPane();
         c.add(panel);
