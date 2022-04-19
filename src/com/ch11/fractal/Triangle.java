@@ -68,7 +68,7 @@ public class    Triangle extends JPanel {
         JFrame window = new JFrame("Fractals");
         window.setBounds(200, 200, 500, 500);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Triangle panel = new Triangle(4);
+        Triangle panel = new Triangle(6);
         panel.setBackground(Color.WHITE);
         Container c = window.getContentPane();
         c.add(panel);
